@@ -1,4 +1,5 @@
-var client = require('discord-rich-presence')('508670321835114506');
+var config = require('./config.json');
+var client = require('discord-rich-presence')(`${config.clientId}`);
 
 function setPresence(details, state, largeImageKey) {
     client.updatePresence({
