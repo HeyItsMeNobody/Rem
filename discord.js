@@ -8,6 +8,8 @@ function setPresence(details, state, largeImageKey) {
         state: state,
         largeImageKey: largeImageKey
     });
+    if (largeImageKey) console.log(`Set activity as: On page: ${details}, ${state}, ${largeImageKey}`);
+    else console.log(`Set activity as: On page: ${details}, ${state}`);
 }
 
 console.log(`discord: added setpresence interval`);

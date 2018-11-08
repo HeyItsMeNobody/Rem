@@ -9,7 +9,6 @@ router.post('/chrome', function(req, res) {
     var largeImageKey =  req.body.largeImageKey
     discord.setPresence(`On page: ${details}`, state, largeImageKey);
     res.json({ message: 'Set the message' });
-    console.log(`Set activity as: On page: ${details}, ${state}, ${largeImageKey}`)
 });
 
 module.exports = router;
