@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var discord = require('./discord');
+console.log(`express: requiring chromeRoute`);
 var chromeRoute = require('./routes/chromeapp');
 
 function expressFunc() {
@@ -12,10 +12,11 @@ function expressFunc() {
         res.json({ message: 'Front page of api? Wyd here?' });  
     });
 
+    console.log(`express: put /api as chromeRoute`);
     app.use('/api', chromeRoute);
 
     app.listen(9999);
-    console.log('Api hosted at port *:9999');
+    console.log('Express api hosted at port *:9999');
 }
 
 module.exports = expressFunc;
