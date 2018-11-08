@@ -1,2 +1,2 @@
-git pull https://github.com/HeyItsMeNobody/Rem.git master
+git pull https://github.com/HeyItsMeNobody/Rem master
 nodemon main.js
