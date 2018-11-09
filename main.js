@@ -5,5 +5,5 @@ var expressFunc = require('./express');
 console.log(`Executing express`)
 expressFunc();
 // Discord stuff
-console.log(`Requiring discord and running it`);
+console.log(`Requiring discord`);
 var discord = require('./discord');
