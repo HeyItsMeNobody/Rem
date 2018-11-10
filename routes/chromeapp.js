@@ -10,7 +10,7 @@ router.post('/chrome', function(req, res) {
     var state = req.body.state
     var largeImageKey =  req.body.largeImageKey
     if (details == "youtube.com") {
-        if (config.YoutubeDataApiv3Key) {
+        if (!config.YoutubeDataApiv3Key == "") {
             var url = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${state.replace("www.youtube.com/watch?v=", "")}&key=${config.YoutubeDataApiv3Key}`;
             request({url: url, json: true}, function (error, response, body) {
                 if (body.items[0] == undefined) {
