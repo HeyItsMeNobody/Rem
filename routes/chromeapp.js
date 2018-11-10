@@ -13,8 +13,12 @@ router.post('/chrome', function(req, res) {
         if (config.YoutubeDataApiv3Key) {
             var url = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${state.replace("www.youtube.com/watch?v=", "")}&key=${config.YoutubeDataApiv3Key}`;
             request({url: url, json: true}, function (error, response, body) {
-                var title = body.items[0].snippet.title
-                discord.setPresence(`On page: ${details}`, `Video: ${title}`, largeImageKey);
+                if (body.items[0] == undefined) {
+                    discord.setPresence(`On page: ${details}`, `N/A`, largeImageKey);
+                } else {
+                    var title = body.items[0].snippet.title
+                    discord.setPresence(`On page: ${details}`, `Video: ${title}`, largeImageKey);
+                }
             });
         } else discord.setPresence(`On page: ${details}`, `Video: No YT api key`, largeImageKey);
     } else {
