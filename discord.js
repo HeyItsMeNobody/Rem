@@ -32,7 +32,9 @@ DClient.on('message', msg => {
         if (msg.deletable == true) {
             if (!msg.attachments.size <= 0) {
                 function doNow() {
-                    msg.channel.send(msg.content);
+                    if(!msg.content == "") {
+                        msg.channel.send(msg.content);
+                    }
                     msg.attachments.forEach(a => {
                         msg.channel.send(a.url);
                     });
