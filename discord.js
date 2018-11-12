@@ -2,6 +2,7 @@ var config = require('./config.json');
 var RPClient = require('discord-rich-presence')(`${config.RPClientId}`);
 var Discord = require('discord.js');
 var DClient = new Discord.Client();
+var fs = require('fs');
 
 // RPC Stuff
 console.log(`discord: added setpresence function`);
@@ -29,8 +30,22 @@ DClient.on('ready', () => {
 DClient.on('message', msg => {
     if (msg.author.tag == `nobody#0384`) {
         if (msg.deletable == true) {
-            msg.channel.send(msg.content);
-            msg.delete();
+            if (!msg.attachments.size <= 0) {
+                function doNow() {
+                    msg.channel.send(msg.content);
+                    msg.attachments.forEach(a => {
+                        msg.channel.send(a.url);
+                    });
+                }
+                function doRightAfter() {
+                    msg.delete();
+                }
+                doNow();
+                setTimeout(doRightAfter, 1000);
+            } else {
+                msg.channel.send(msg.content);
+                msg.delete();
+            }
         }
     }
 });
