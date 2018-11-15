@@ -31,19 +31,7 @@ DClient.on('message', msg => {
     if (msg.author.tag == `nobody#0384`) {
         if (msg.deletable == true) {
             if (!msg.attachments.size <= 0) {
-                function doNow() {
-                    msg.attachments.forEach(a => {
-                        if(!msg.content == "") {
-                            msg.channel.send(msg.content);
-                        }
-                        msg.channel.send(a.url);
-                    });
-                }
-                function doRightAfter() {
-                    msg.delete();
-                }
-                doNow();
-                setTimeout(doRightAfter, 2000);
+                console.log('Oh god a file run!');
             } else {
                 msg.channel.send(msg.content);
                 msg.delete();
