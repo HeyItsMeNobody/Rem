@@ -32,10 +32,10 @@ DClient.on('message', msg => {
         if (msg.deletable == true) {
             if (!msg.attachments.size <= 0) {
                 function doNow() {
-                    if(!msg.content == "") {
-                        msg.channel.send(msg.content);
-                    }
                     msg.attachments.forEach(a => {
+                        if(!msg.content == "") {
+                            msg.channel.send(msg.content);
+                        }
                         msg.channel.send(a.url);
                     });
                 }
@@ -43,7 +43,7 @@ DClient.on('message', msg => {
                     msg.delete();
                 }
                 doNow();
-                setTimeout(doRightAfter, 1000);
+                setTimeout(doRightAfter, 2000);
             } else {
                 msg.channel.send(msg.content);
                 msg.delete();
