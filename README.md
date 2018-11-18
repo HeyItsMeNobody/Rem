@@ -1,3 +1,4 @@
+[![GitHub issues](https://img.shields.io/github/issues/HeyItsMeNobody/Rem.svg)](https://github.com/HeyItsMeNobody/Rem/issues) [![GitHub issues](https://img.shields.io/github/issues/HeyItsMeNobody/Rem.svg)](https://github.com/HeyItsMeNobody/Rem/issues) [![GitHub issues](https://img.shields.io/github/issues/HeyItsMeNobody/Rem.svg)](https://github.com/HeyItsMeNobody/Rem/issues) [![Twitter](https://img.shields.io/twitter/url/https/github.com/HeyItsMeNobody/Rem.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FHeyItsMeNobody%2FRem)
 # Rem
 Just to make this clear: You need to have NODE.JS installed
 
